@@ -5,7 +5,7 @@ A simple, small library to convert JavaScript objects into a csv string.
 [![npm version](https://badge.fury.io/js/objects2csv.svg)](https://badge.fury.io/js/objects2csv)
 
 ## Features
-- Small (less than ~3kB)
+- Small (less than ~5kB unpacked)
 - Uses modern JavaScript (ES7)
 - Automatic field detection
 - Default value for missing fields
@@ -48,4 +48,10 @@ const options = {
     lineSeparator: "\n", // This is the sequence that will be used at the end of a line (after each object)
     excludeKeys: [] // If you don't want a field to be in the final csv string, exclude it here. For example the ccnumber and cvv field: ["ccnumber", "cvv"]
 }
+```
+
+Usage of the custom options:
+
+```js
+const csv = convert(data, { excludeKeys: ["maxPassengers", "doors"], quote: "" });
 ```
