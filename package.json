@@ -1,0 +1,31 @@
+{
+  "name": "objects2csv",
+  "version": "1.0.0",
+  "description": "A simple, small library to convert JavaScript objects into a csv string",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HTLFabian/objects2csv.git"
+  },
+  "keywords": [
+    "csv",
+    "convert",
+    "converter",
+    "conversion",
+    "util",
+    "utils",
+    "utility",
+    "utilities",
+    "objects",
+    "array"
+  ],
+  "author": "HTLFabian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HTLFabian/objects2csv/issues"
+  },
+  "homepage": "https://github.com/HTLFabian/objects2csv#readme"
+}
