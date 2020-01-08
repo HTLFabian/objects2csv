@@ -1,6 +1,6 @@
 {
   "name": "objects2csv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple, small library to convert JavaScript objects into a csv string",
   "main": "index.js",
   "scripts": {
