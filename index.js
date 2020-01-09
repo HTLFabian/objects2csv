@@ -7,8 +7,14 @@ function objects2csv(objects, {header = true, unavailable = " ", separator = ";"
         });
         return keys;
     }, []);
-    const body = objects.map(obj => distinctKeys.map(k => quote + (obj[k] || unavailable).toString().replace(quote, escape) + quote).join(separator)).join(lineSeparator);
-    return header ? (distinctKeys.map(k => (quote + k.replace(quote, escape) + quote)).join(separator) + lineSeparator + body) : body;
+    const body = objects.map(obj => distinctKeys.map(k => quoteAndEscape((obj[k] || unavailable).toString(), quote, escape)).join(separator)).join(lineSeparator);
+    return header ? (distinctKeys.map(k => (quoteAndEscape(k, quote, escape))).join(separator) + lineSeparator + body) : body;
+}
+
+function quoteAndEscape(str, quote, escape) {
+    if(quote)
+        return quote + str.replace(quote, escape) + quote;
+    return str;
 }
 
 module.exports = objects2csv;
