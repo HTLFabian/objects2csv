@@ -5,7 +5,8 @@ A simple, small library to convert JavaScript objects into a csv string.
 [![npm version](https://badge.fury.io/js/objects2csv.svg)](https://badge.fury.io/js/objects2csv)
 
 ## Features
-- Small (less than ~5kB unpacked)
+- Small (~5kB unpacked)
+- No dependencies
 - Uses modern JavaScript (ES7)
 - Automatic field detection
 - Default value for missing fields
@@ -34,6 +35,13 @@ const csv = convert(data);
 
 console.log(csv);
 ```
+Output:
+```
+"type";"model";"year";"maxPassengers";"doors"
+"car";"BMW";"2019";"5";"5"
+"car";"VW";"2003";" ";"3"
+"bus";"Mercedes";"2019";"50";" "
+```
 
 This will use the default values for all options. In order to customize the generated csv, the following options exist:
 
@@ -53,5 +61,12 @@ const options = {
 Usage of the custom options:
 
 ```js
-const csv = convert(data, { excludeKeys: ["maxPassengers", "doors"], quote: "" });
+const csv = convert(data, { excludeKeys: ["maxPassengers", "doors"], quote: null }); // quote: "" can also be used
+```
+Output:
+```
+type;model;year
+car;BMW;2019
+car;VW;2003
+bus;Mercedes;2019
 ```
